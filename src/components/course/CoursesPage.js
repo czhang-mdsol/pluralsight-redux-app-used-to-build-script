@@ -37,6 +37,8 @@ CoursesPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
+  console.log("mapStateToProps");
+  console.log(state);
   return {
     courses: state.courses
   };

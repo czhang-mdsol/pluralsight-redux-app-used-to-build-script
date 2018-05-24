@@ -7,6 +7,10 @@ import initialState from './initialState';
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
 export default function courses(state = initialState.courses, action) {
+  console.log("courseReducer courses");
+  console.log(state);
+  console.log(action);
+
   switch (action.type) {
     case types.LOAD_COURSES_SUCCESS:
       return action.courses;

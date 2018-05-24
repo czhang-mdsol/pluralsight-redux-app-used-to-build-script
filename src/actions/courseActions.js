@@ -3,14 +3,17 @@ import * as types from './actionTypes';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export function loadCoursesSuccess(courses) {
+  console.log("loadCoursesSuccess");
   return {type: types.LOAD_COURSES_SUCCESS, courses};
 }
 
 export function createCourseSuccess(course) {
+  console.log("createCourseSuccess");
   return {type: types.CREATE_COURSE_SUCCESS, course};
 }
 
 export function updateCourseSuccess(course) {
+  console.log("updateCourseSuccess");
   return {type: types.UPDATE_COURSE_SUCCESS, course};
 }
 
@@ -18,6 +21,7 @@ export function updateCourseSuccess(course) {
 // Each returns a function that accepts a dispatch.
 // These are used by redux-thunk to support asynchronous interactions.
 export function loadCourses() {
+  console.log("loadCourses");
   return function (dispatch) {
     dispatch(beginAjaxCall());
     return CourseApi.getAllCourses().then(courses => {
@@ -29,6 +33,7 @@ export function loadCourses() {
 }
 
 export function saveCourse(course) {
+  console.log("loadAuthorsSuccess");
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return CourseApi.saveCourse(course).then(course => {
